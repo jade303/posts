@@ -97,7 +97,7 @@ All GET routes, unless otherwise specified, should `res.render` a template. All 
       - optionally, each comment could have a link to delete it
     - if you're logged in, a form for commenting should show
   - `GET /posts/create`
-    - form for creating a new post
+    - form for creating a new post //✅//
   - `POST /posts/create`
     - processes the creation
     - doesn't allow invalid creations, for example if there's no link and also no description

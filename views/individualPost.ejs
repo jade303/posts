@@ -25,7 +25,14 @@
           <div><%= post.description %></div>
           <div>Sauce: <a href= <%=post.link%>><%= post.link %> </a></div>
         </div>
-
+        <div><p></p></div>
+        <div class="create">
+          <% if (!user) { %>
+            Please <a href="/auth/login">Login</a> to create posts.
+          <% } else { %>
+            <a role="button" href="/posts/create/?sub=<%=post.subgroup %>">Create Post</a>
+          <% } %>
+        </div>
       </div>
     </main>
   </body>

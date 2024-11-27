@@ -11,16 +11,19 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/create", ensureAuthenticated, (req, res) => {
+  
   res.render("createPosts");
 });
 
 router.post("/create", ensureAuthenticated, async (req, res) => {
   // ⭐ TODO
+  //const foo = req.body.title;
 });
 
 router.get("/show/:postid", async (req, res) => { //if postid doesn't exist, the app will crash
+  const user = await req.user;
   try { const post = await getPost(parseInt(req.params.postid));
-    res.render("individualPost", { post });
+    res.render("individualPost", { post, user });
   } catch {
     res.redirect("/"); //so redirect to home instead
   }

@@ -31,19 +31,17 @@
         </div>
         <% }) %>
       </div>
-
       <div>
         <a href="/subs/list">Subgroups</a>
       </div>
-      <p></p>
-
-        <% if (!user) { %>
-        Please <a href="/auth/login">Login</a> to create posts.
-        <% } else { %>
-          <a role="button" href="/posts/create">Create Post</a>
-        <% } %>
-      <div>
-      </div>
+        <div><p></p></div>
+        <div class="create">
+          <% if (!user) { %>
+            Please <a href="/auth/login">Login</a> to create posts.
+          <% } else { %>
+            <a role="button" href="/posts/create">Create Post</a>
+          <% } %>
+        </div>
     </main>
   </body>
 </html>

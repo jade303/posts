@@ -25,9 +25,16 @@
         <div class="individualPost">
           <a href="/posts/show/<%=post.id%>"><%= post.title %></a>
           <p><%= post.description %></p>
-        </div>
+        </div> 
         <% }) %>
-
+        <div><p></p></div>
+        <div class="create">
+          <% if (!user) { %>
+            Please <a href="/auth/login">Login</a> to create posts.
+          <% } else { %>
+            <a role="button" href="/posts/create/?sub=<%=posts[0].subgroup %>">Create Post</a>
+          <% } %>
+        </div>
       </div>
     </main>
   </body>
