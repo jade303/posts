@@ -28,7 +28,8 @@
         <div class="individualPost">
           <a href="/posts/show/<%=post.id%>"><%= post.title %></a>
           <br><%= post.description %>
-          <p>By <%= user?.uname %></p>
+          <br>By <%= getUser(post.creator).uname %>
+          <br>Votes: <%=  %><br><br>
         </div>
         <% }) %>
       </div>

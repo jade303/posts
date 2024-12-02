@@ -32,7 +32,7 @@
             <a role="button" href="/posts/edit/<%=post.id %>">Edit post</a>
             <% } %>
             <% } %>
-          
+          Votes: <% var temp =0;%> <% post.votes.forEach(v=> {temp += v.value});%><%= temp %>
         <div class="comments">
           <br><h5>Comments</h5>
           <% post.comments.forEach(com => { %>
@@ -46,7 +46,7 @@
           <% if (!user) { %>
             Please <a href="/auth/login">Login</a> to create or comment on posts.
           <% } else { %>
-            <form action="/posts/comment-create/" method="post">
+            <form action="/posts/comment-create/<%=post.id %>" method="post">
               <input type="text" name="comment" id="comment" placeholder="Write comment here" />
               <button type="submit">Post Comment</button>
             <a role="button" href="/posts/create/?sub=<%=post.subgroup %>">Create new post</a>

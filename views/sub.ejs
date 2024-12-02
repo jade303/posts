@@ -24,7 +24,8 @@
         <% posts.forEach(post => { %>
         <div class="individualPost">
           <a href="/posts/show/<%=post.id%>"><%= post.title %></a>
-          <p><%= post.description %></p>
+          <br><%= post.description %>
+          <br>Votes: <%=  %><br><br>
         </div> 
         <% }) %>
         <div><p></p></div>

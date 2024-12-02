@@ -7,11 +7,12 @@ import { addPost } from "../fake-db";
 import { editPost } from "../fake-db";
 import { deletePost } from "../fake-db";
 import { addComment } from "../fake-db";
+import { getUser } from "../fake-db";
 
 router.get("/", async (req, res) => {
   const posts = await getPosts(20);
   const user = await req.user;
-  res.render("posts", { posts, user }); //basically the homepage...
+  res.render("posts", { posts, user, getUser }); //basically the homepage...
 });
 
 router.get("/create", ensureAuthenticated, (req, res) => {
@@ -85,8 +86,8 @@ router.post(
   }
 );
 
-// router.post("/posts/vote/:postid/", ensureAuthenticated, async (req, res) =>{
+router.post("/posts/vote/:postid/", ensureAuthenticated, async (req, res) =>{
 
-// });
+});
 
 export default router;
