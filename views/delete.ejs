@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Delete Post</title>
+  </head>
+  <body>
+    <main>
+      <div class="authOptions">
+        <h1>Edit Post</h1>  
+        <div class="individualPost">
+          <div>Title: <%= post.title %></div>
+          <div>Description: <%= post.description %></div>
+          <div>Sauce: <a href= <%=post.link%>><%= post.link %> </a></div>
+          <div><br>Posted by <%= post.creator.uname %>
+            at <%= new Date(post.timestamp) %></div>
+          </div>
+          <div></div>      
+        <a role="button" href="/posts">Home</a>
+      </div>
+      <form action="/posts/delete/<%= post.id%>" method="post">
+        <input type="text" name="subgroup" value="<%=post.subgroup%>" hidden>
+        Are you sure you want to delete this post?
+       <input type="submit" value="Delete">
+       <a role="button" href="/posts/show/<%= post.id%>">Cancel</a>
+      </form>
+    </main>
+  </body>
+</html>

@@ -44,6 +44,16 @@ const posts: TPosts = {
     subgroup: "coding",
     timestamp: 1642611742010,
   },
+  103: {
+    id: 103,
+    title: "New bleeding edge software is in fact double edged",
+    link: "https://leerob.io/blog/edge",
+    description:
+      "What people call AI is not in fact, intelligent.",
+    creator: 2,
+    subgroup: "coding",
+    timestamp: 1642611942010,
+  },
 };
 
 const comments: TComments = {
@@ -53,6 +63,13 @@ const comments: TComments = {
     creator: 1,
     description: "Actually I learned a lot",
     timestamp: 1642691742010,
+  },
+  9002: {
+    id: 9002,
+    post_id: 102,
+    creator: 2,
+    description: "Yeah I learned a lot too",
+    timestamp: 1642691748070,
   },
 };
 
@@ -95,6 +112,7 @@ function decoratePost(post: TPost) {
       .filter((comment) => comment.post_id === post.id)
       .map((comment) => ({ ...comment, creator: users[comment.creator] })),
   };
+  console.log(newPost);
   return newPost;
 }
 

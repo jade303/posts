@@ -14,12 +14,13 @@
   <body>
     <main>
       <div class="authOptions">
-        <h1>Create Post</h1>
+        <h1>Create Post</h1>        
         <a role="button" href="/posts">Home</a>
       </div>
-      <form action="/action_page.php" method="post">
+      <form action="/posts/create" method="post">
         <input type="text" name="subgroup" placeholder="Subgroup" id="s" required>
         <input type="text" name="title" placeholder="Post Title" required>
+        <input type="text" name="description" placeholder="Content" required>
         <input type="text" name="link" placeholder="Link">
         <input type="submit" value="Submit">
         <script> origin = new URLSearchParams(window.location.search);

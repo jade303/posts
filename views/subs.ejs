@@ -19,7 +19,8 @@
       </div>
       <div>
         <p>Choose a breaddit. Maybe Rye?</p>
-        <% subgroups.forEach(sub => { %>
+        <% subgroup_sorted = subgroups.sort(function(a, b){ return (a<b) ? -1 : 1}) %>
+        <% subgroup_sorted.forEach(sub => { %>
           <div class="Subgroups">
             <a href="/subs/show/<%=sub%>"><%= sub %></a>
           </div>
